@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour {
 
+	public GUIText scoreGT;
+
 	// Use this for initialization
 	void Start () {
-		
+		//find a reference to the scoreCounter GameObject
+		GameObject scoreGO = GameObject.Find("ScoreCounter");
+		//get the GUIText component of that GameObject
+		scoreGT = scoreGO.GetComponent<GUIText>();
+		//set the starting number of points to 0
+		scoreGT.text = "0";
 	}
 	
 
@@ -35,6 +42,13 @@ public class Basket : MonoBehaviour {
 		if (collidedWith.tag == "Apple") {
 			Destroy (collidedWith);
 		}
+
+		//Parse the text of the scoreGT into an int
+		int score = int.Parse(scoreGT.text);
+		//Add points for catching the apple
+		score += 100;
+		//convert the score back to a string and display it
+		scoreGT.text = score.ToString();
 	}
 
 }
