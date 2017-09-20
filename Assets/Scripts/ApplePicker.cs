@@ -26,6 +26,11 @@ public class ApplePicker : MonoBehaviour {
 		GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
 		foreach (GameObject tGO in tAppleArray) {
 			Destroy (tGO);
+
+			//restart the game, which doesn't affect High_Score.score
+			if (basketList.Count == 0) {
+				Application.LoadLevel ("Scene_0");
+			}
 		}
 
 		//destroy one of the baskets
