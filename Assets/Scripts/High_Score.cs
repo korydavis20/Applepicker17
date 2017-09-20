@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class High_Score : MonoBehaviour {
 
@@ -23,7 +24,7 @@ public class High_Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GUIText gt = this.GetComponent<GUIText> ();
+		Text gt = this.GetComponent<Text> ();
 		gt.text = "High Score: " + score;
 
 		//update ApplePickerHighSCore in PlayerPrefs if necessary

@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Basket : MonoBehaviour {
 
-	public GUIText scoreGT;
+	public Text scoreGT;
 
 	// Use this for initialization
 	void Start () {
 		//find a reference to the scoreCounter GameObject
-		GameObject scoreGO = GameObject.Find("ScoreCounter");
-		//get the GUIText component of that GameObject
-		scoreGT = scoreGO.GetComponent<GUIText>();
+		GameObject scoreGO = GameObject.Find("Score Counter");
+		//get the Text component of that GameObject
+		scoreGT = scoreGO.GetComponent<Text>();
 		//set the starting number of points to 0
 		scoreGT.text = "0";
 	}
